@@ -1,0 +1,19 @@
+imports:
+  - { resource: User/services.yaml }
+
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  OxidEsales\SessionAuthComponent\Security\Listener\SessionAuthListener:
+    arguments:
+      - '@OxidEsales\SessionAuthComponent\Security\User\FrontendSessionUserProvider'
+    tags:
+      - { name: kernel.event_subscriber }
+
+  OxidEsales\SessionAuthComponent\Security\Listener\AdminSessionAuthListener:
+    arguments:
+      - '@OxidEsales\SessionAuthComponent\Security\User\AdminSessionUserProvider'
+    tags:
+      - { name: kernel.event_subscriber }

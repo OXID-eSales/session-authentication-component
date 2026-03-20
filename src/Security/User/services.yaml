@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  OxidEsales\SessionAuthComponent\Security\User\FrontendSessionUserProvider: ~
+
+  OxidEsales\SessionAuthComponent\Security\User\AdminSessionUserProvider: ~
+
+  OxidEsales\SessionAuthComponent\Security\User\SessionUserProviderInterface:
+    alias: OxidEsales\SessionAuthComponent\Security\User\FrontendSessionUserProvider

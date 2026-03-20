@@ -1,0 +1,6 @@
+services:
+  _defaults:
+    autowire: true
+
+  OxidEsales\SessionAuthComponent\Tests\Fixtures\TestModule\src\Controller\SessionAuthTestController:
+    public: true
